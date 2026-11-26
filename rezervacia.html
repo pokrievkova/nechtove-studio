@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="sk">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vyberte si službu a termín v nechtovom štúdiu Elegance Nails.">
+    <title>Elegance Nails | Rezervácia</title>
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="main-navigation" aria-label="Hlavná navigácia">
+        <a class="brand" href="index.html" aria-label="Elegance Nails – domov"><span class="brand-mark" aria-hidden="true">E</span><span class="brand-name">Elegance</span></a>
+        <div class="navigation-actions">
+          <a href="index.html">Domov</a><a href="o-nas.html">O nás</a><a href="galeria.html">Galéria</a>
+          <details class="nav-menu"><summary class="menu-toggle" aria-label="Otvoriť navigačné menu"><span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span></summary>
+            <ul class="menu"><li><a href="sluzby.html">Služby</a></li><li><a href="cennik.html">Cenník</a></li><li><a href="recenzie.html">Recenzie</a></li><li><a href="kontakt.html">Kontakt</a></li></ul>
+          </details>
+          <a class="reservation-button" href="rezervacia.html" aria-current="page"><span aria-hidden="true">▣</span>Rezervovať termín</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="page-content reservation-page" id="rezervacia" aria-labelledby="page-title">
+        <header><p>Rezervácia termínu</p><h1 id="page-title">Vyberte si termín</h1></header>
+        <form action="#" method="post">
+          <div class="reservation-date-column">
+            <div class="form-field">
+              <label for="service">Typ služby</label>
+              <select id="service" name="service" required>
+                <option value="">Vyberte službu</option>
+                <option value="klasicka-manikura">Klasická manikúra</option>
+                <option value="gel-lak">Gél lak</option>
+                <option value="french">French</option>
+                <option value="predlzenie">Predĺženie gélových nechtov</option>
+                <option value="doplnenie">Doplnenie gélových nechtov</option>
+                <option value="zdobenie">Zdobenie nechtov</option>
+                <option value="odstranenie">Odstránenie materiálu</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="date">Dátum</label>
+              <input id="date" name="date" type="date" required>
+            </div>
+            <div class="form-field">
+              <label for="time">Čas</label>
+              <select id="time" name="time" required>
+                <option value="">Vyberte čas</option>
+                <option value="09:00">09:00</option>
+                <option value="10:30">10:30</option>
+                <option value="12:00">12:00</option>
+                <option value="13:30">13:30</option>
+                <option value="15:00">15:00</option>
+                <option value="16:30">16:30</option>
+              </select>
+            </div>
+          </div>
+          <div class="reservation-contact-column">
+            <div class="form-field">
+              <label for="name">Meno a priezvisko</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="Napr. Viktória Nováková" required>
+            </div>
+            <div class="form-field">
+              <label for="phone">Telefón</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+421 900 123 456" required>
+            </div>
+            <div class="form-field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="meno@email.sk" required>
+            </div>
+            <label class="reminder-option"><input type="checkbox" name="email-reminder" value="yes">Chcem e-mailovú pripomienku deň pred termínom</label>
+            <aside aria-label="Zhrnutie rezervácie"><h2>Zhrnutie rezervácie</h2><p>Vyberte službu, dátum a čas.</p></aside>
+            <button type="submit">Skontrolovať údaje</button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-about"><a class="footer-brand" href="index.html">Elegance Nails</a><p>Profesionálna starostlivosť o nechty.</p></div>
+      <nav class="footer-navigation" aria-label="Navigácia v pätičke"><h2>Stránky</h2><a href="index.html">Domov</a><a href="o-nas.html">O nás</a><a href="sluzby.html">Služby</a><a href="cennik.html">Cenník</a><a href="galeria.html">Galéria</a><a href="recenzie.html">Recenzie</a></nav>
+      <div class="footer-contact"><h2>Kontakt</h2><p>Telefón: bude doplnený</p><p>E-mail: bude doplnený</p><p>Adresa: bude doplnená</p><p>Otváracie hodiny: budú doplnené</p></div>
+      <div class="footer-social"><h2>Sociálne siete</h2><p>Instagram – odkaz doplníme</p><p>Facebook – odkaz doplníme</p><a class="footer-booking" href="rezervacia.html">Rezervovať termín</a></div>
+      <small class="footer-copyright">© 2026 Elegance Nails</small>
+    </footer>
+  </body>
+</html>
