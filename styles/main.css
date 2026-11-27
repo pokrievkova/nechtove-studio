@@ -1260,10 +1260,6 @@ button {
     padding: 8px 0;
   }
 
-  .reservation-date-column {
-    grid-template-columns: 1fr;
-  }
-
   .brand {
     flex: 1 0 100%;
   }
@@ -1427,7 +1423,40 @@ button {
 
   .reservation-date-column,
   .reservation-contact-column {
+    width: 100%;
+    min-width: 0;
     gap: 10px;
+  }
+
+  .reservation-page .form-field,
+  .reservation-page .reminder-option,
+  .reservation-page aside,
+  .reservation-page button[type="submit"],
+  .reservation-page .privacy-notice,
+  .reservation-page .privacy-consent,
+  .reservation-page #privacy-consent-error {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .reservation-page .form-field input,
+  .reservation-page .form-field select {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .reservation-page button[type="submit"] {
+    display: block;
+  }
+
+  .reservation-contact-column {
+    gap: 14px;
+  }
+
+  .reservation-page aside {
+    overflow-wrap: anywhere;
   }
 
   .site-footer {
@@ -1457,6 +1486,29 @@ button {
   }
 }
 
+@media (max-width: 480px) {
+  .reservation-date-column {
+    grid-template-columns: 1fr;
+  }
+
+  .reservation-date-column .form-field {
+    grid-column: 1;
+  }
+
+  .reservation-page form {
+    gap: 16px;
+  }
+
+  .reservation-page .form-field input,
+  .reservation-page .form-field select {
+    min-height: 46px;
+  }
+
+  .reservation-summary-list div {
+    grid-template-columns: 54px minmax(0, 1fr);
+  }
+}
+
 @media (max-width: 390px) {
   .main-navigation {
     width: calc(100% - 24px);
@@ -1478,6 +1530,41 @@ button {
   .review-grid,
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .reservation-page {
+    width: 100%;
+  }
+
+  .reservation-page form {
+    gap: 14px;
+    padding: 12px;
+  }
+
+  .reservation-date-column,
+  .reservation-contact-column {
+    gap: 12px;
+  }
+
+  .reservation-page aside {
+    padding: 10px;
+  }
+
+  .reservation-summary-list {
+    font-size: 12px;
+  }
+
+  .reservation-summary-list div {
+    grid-template-columns: 50px minmax(0, 1fr);
+  }
+
+  .reminder-option,
+  .privacy-consent {
+    align-items: flex-start;
+  }
+
+  .reservation-page button[type="submit"] {
+    min-height: 46px;
   }
 }
 
