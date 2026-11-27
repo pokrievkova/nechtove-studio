@@ -10,7 +10,7 @@
   <body>
     <header class="site-header">
       <nav class="main-navigation" aria-label="Hlavná navigácia">
-        <a class="brand" href="index.html" aria-label="Elegance Nails – domov"><span class="brand-mark" aria-hidden="true">E</span><span class="brand-name">Elegance</span></a>
+        <a class="brand" href="index.html" aria-label="Elegance Nails – domov"><img src="docs/prototyp/logo.png" alt="Elegance Nails" width="180" height="60"></a>
         <div class="navigation-actions">
           <a href="index.html">Domov</a><a href="o-nas.html">O nás</a><a href="galeria.html">Galéria</a>
           <details class="nav-menu"><summary class="menu-toggle" aria-label="Otvoriť navigačné menu"><span class="menu-toggle-icon" aria-hidden="true"><span></span><span></span><span></span></span></summary>
@@ -22,7 +22,7 @@
     </header>
     <main>
       <section class="page-content reservation-page" id="rezervacia" aria-labelledby="page-title">
-        <header><p>Rezervácia termínu</p><h1 id="page-title">Vyberte si termín</h1></header>
+        <header><p>Rezervácia termínu</p><h1 id="page-title">Doprajte si chvíľu pre seba.</h1><p>Vyberte si službu, dátum a čas, ktorý vám vyhovuje. Vyplňte svoje kontaktné údaje a odošlite žiadosť o rezerváciu.</p></header>
         <form action="#" method="post">
           <div class="reservation-date-column">
             <div class="form-field">
@@ -69,18 +69,70 @@
               <input id="email" name="email" type="email" autocomplete="email" placeholder="meno@email.sk" required>
             </div>
             <label class="reminder-option"><input type="checkbox" name="email-reminder" value="yes">Chcem e-mailovú pripomienku deň pred termínom</label>
-            <aside aria-label="Zhrnutie rezervácie"><h2>Zhrnutie rezervácie</h2><p>Vyberte službu, dátum a čas.</p></aside>
+            <aside aria-label="Prehľad rezervácie" aria-live="polite">
+              <h2>Prehľad rezervácie</h2>
+              <p id="reservation-placeholder">Vyberte službu, dátum a čas.</p>
+              <dl class="reservation-summary-list" id="reservation-summary" hidden>
+                <div><dt>Služba</dt><dd id="summary-service">—</dd></div>
+                <div><dt>Dátum</dt><dd id="summary-date">—</dd></div>
+                <div><dt>Čas</dt><dd id="summary-time">—</dd></div>
+              </dl>
+            </aside>
             <button type="submit">Skontrolovať údaje</button>
           </div>
         </form>
       </section>
     </main>
     <footer class="site-footer">
-      <div class="footer-about"><a class="footer-brand" href="index.html">Elegance Nails</a><p>Profesionálna starostlivosť o nechty.</p></div>
-      <nav class="footer-navigation" aria-label="Navigácia v pätičke"><h2>Stránky</h2><a href="index.html">Domov</a><a href="o-nas.html">O nás</a><a href="sluzby.html">Služby</a><a href="cennik.html">Cenník</a><a href="galeria.html">Galéria</a><a href="recenzie.html">Recenzie</a></nav>
-      <div class="footer-contact"><h2>Kontakt</h2><p>Telefón: bude doplnený</p><p>E-mail: bude doplnený</p><p>Adresa: bude doplnená</p><p>Otváracie hodiny: budú doplnené</p></div>
-      <div class="footer-social"><h2>Sociálne siete</h2><p>Instagram – odkaz doplníme</p><p>Facebook – odkaz doplníme</p><a class="footer-booking" href="rezervacia.html">Rezervovať termín</a></div>
-      <small class="footer-copyright">© 2026 Elegance Nails</small>
+      <div class="footer-about"><a class="footer-brand" href="index.html">Elegance Nails</a><p>Krása sa skrýva v detailoch. Doprajte svojim nechtom starostlivosť, eleganciu a chvíľu oddychu.</p></div>
+      <nav class="footer-navigation" aria-label="Navigácia v pätičke"><h2>Rýchle odkazy</h2><a href="index.html">Domov</a><a href="o-nas.html">O nás</a><a href="sluzby.html">Služby</a><a href="cennik.html">Cenník</a><a href="galeria.html">Galéria</a><a href="recenzie.html">Recenzie</a><a href="kontakt.html">Kontakt</a><a href="rezervacia.html">Rezervácia</a></nav>
+      <div class="footer-contact"><h2>Kontakt</h2><p>Telefón: <a href="tel:+421910123456">+421 910 123 456</a></p><p>E-mail: <a href="mailto:info@elegancenails.sk">info@elegancenails.sk</a></p><p>Adresa: Ružová 12, 033 01 Liptovský Hrádok</p><p class="footer-opening-hours-title"><strong>Otváracie hodiny:</strong></p><p>Pondelok – piatok: 9:00 – 18:00</p><p>Sobota: 9:00 – 13:00</p><p>Nedeľa: zatvorené</p></div>
+      <div class="footer-social"><h2>Sledujte nás</h2><a href="https://www.instagram.com/elegance.nails.sk/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Elegance Nails"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.4" cy="6.6" r="1"></circle></svg><span>@elegance.nails.sk</span></a><a href="https://www.facebook.com/EleganceNails/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Elegance Nails"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v5h4v-5h3l1-4h-4V9c0-.7.3-1 1-1Z"></path></svg><span>@Elegance Nails</span></a></div>
+      <div class="footer-copyright"><small>© 2026 Elegance Nails. Všetky práva vyhradené.</small><nav aria-label="Právne informácie"><a href="mailto:info@elegancenails.sk?subject=Ochrana osobných údajov">Ochrana osobných údajov</a><span aria-hidden="true">•</span><a href="mailto:info@elegancenails.sk?subject=Podmienky používania">Podmienky používania</a></nav></div>
     </footer>
+    <script>
+      const serviceField = document.querySelector("#service");
+      const dateField = document.querySelector("#date");
+      const timeField = document.querySelector("#time");
+      const placeholder = document.querySelector("#reservation-placeholder");
+      const summary = document.querySelector("#reservation-summary");
+      const summaryService = document.querySelector("#summary-service");
+      const summaryDate = document.querySelector("#summary-date");
+      const summaryTime = document.querySelector("#summary-time");
+
+      function formatDate(value) {
+        if (!value) return "";
+        const date = new Date(`${value}T12:00:00`);
+        return new Intl.DateTimeFormat("sk-SK", {
+          day: "numeric",
+          month: "numeric",
+          year: "numeric"
+        }).format(date);
+      }
+
+      function updateReservationSummary() {
+        const service = serviceField.options[serviceField.selectedIndex]?.text;
+        const date = formatDate(dateField.value);
+        const time = timeField.options[timeField.selectedIndex]?.text;
+        const hasSelection = Boolean(serviceField.value && dateField.value && timeField.value);
+
+        if (!hasSelection) {
+          placeholder.hidden = false;
+          summary.hidden = true;
+          return;
+        }
+
+        placeholder.hidden = true;
+        summary.hidden = false;
+        summaryService.textContent = serviceField.value ? service : "—";
+        summaryDate.textContent = date || "—";
+        summaryTime.textContent = timeField.value ? time : "—";
+      }
+
+      serviceField.addEventListener("change", updateReservationSummary);
+      dateField.addEventListener("input", updateReservationSummary);
+      timeField.addEventListener("change", updateReservationSummary);
+      updateReservationSummary();
+    </script>
   </body>
 </html>
