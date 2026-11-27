@@ -6,6 +6,101 @@
     <meta name="description" content="Vyberte si službu a termín v nechtovom štúdiu Elegance Nails.">
     <title>Elegance Nails | Rezervácia</title>
     <link rel="stylesheet" href="styles/main.css">
+    <style>
+      .reservation-success-modal {
+        position: fixed;
+        inset: 0;
+        width: min(460px, calc(100% - 32px));
+        max-width: none;
+        height: fit-content;
+        max-height: calc(100vh - 32px);
+        margin: auto;
+        padding: 0;
+        overflow: auto;
+        border: 1px solid var(--color-border-soft);
+        border-radius: 24px;
+        color: var(--color-text);
+        background: linear-gradient(145deg, #fffaf5, var(--color-surface-soft));
+        box-shadow: 0 24px 70px rgb(61 39 47 / 22%);
+        text-align: center;
+      }
+
+      .reservation-success-modal[open] {
+        display: grid;
+        place-items: center;
+      }
+
+      .reservation-success-modal::backdrop {
+        background: rgb(39 29 34 / 48%);
+        backdrop-filter: blur(3px);
+      }
+
+      .reservation-success-content {
+        display: grid;
+        justify-items: center;
+        gap: 16px;
+        padding: clamp(28px, 7vw, 44px);
+      }
+
+      .reservation-success-icon {
+        display: grid;
+        width: 68px;
+        aspect-ratio: 1;
+        place-items: center;
+        border: 1px solid var(--color-border);
+        border-radius: 50%;
+        color: var(--color-accent-dark);
+        background: #f8e9ed;
+      }
+
+      .reservation-success-icon svg {
+        width: 34px;
+        height: 34px;
+        fill: none;
+        stroke: currentColor;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2;
+      }
+
+      .reservation-success-modal h2 {
+        margin: 0;
+        color: var(--color-accent-dark);
+        font-family: var(--font-heading);
+        font-size: clamp(28px, 7vw, 36px);
+        line-height: 1.1;
+      }
+
+      .reservation-success-modal p {
+        margin: 0;
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      .reservation-success-close {
+        min-width: 150px;
+        min-height: 46px;
+        margin-top: 4px;
+        padding: 11px 24px;
+        border: 0;
+        border-radius: 999px;
+        color: #fff;
+        background: var(--color-accent);
+        font: inherit;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color 160ms ease, transform 160ms ease;
+      }
+
+      .reservation-success-close:hover,
+      .reservation-success-close:focus-visible {
+        background: var(--color-accent-dark);
+      }
+
+      .reservation-success-close:hover {
+        transform: translateY(-1px);
+      }
+    </style>
   </head>
   <body>
     <header class="site-header">
@@ -23,7 +118,7 @@
     <main>
       <section class="page-content reservation-page" id="rezervacia" aria-labelledby="page-title">
         <header><p>Rezervácia termínu</p><h1 id="page-title">Doprajte si chvíľu pre seba.</h1><p>Vyberte si službu, dátum a čas, ktorý vám vyhovuje. Vyplňte svoje kontaktné údaje a odošlite žiadosť o rezerváciu.</p></header>
-        <form action="#" method="post">
+        <form>
           <div class="reservation-date-column">
             <div class="form-field">
               <label for="service">Typ služby</label>
@@ -80,7 +175,8 @@
             </aside>
             <button type="submit">Skontrolovať údaje</button>
             <p class="privacy-notice">Vaše osobné údaje použijeme na spracovanie rezervácie a zaslanie potvrdenia. Viac informácií nájdete v dokumente <a href="ochrana-osobnych-udajov.html">Ochrana osobných údajov</a>.</p>
-            <label class="privacy-consent"><input type="checkbox" name="privacy-information-read" required>Oboznámila som sa s informáciami o spracúvaní osobných údajov. <a href="ochrana-osobnych-udajov.html">Ochrana osobných údajov</a></label>
+            <label class="privacy-consent"><input id="privacy-information-read" type="checkbox" name="privacy-information-read" aria-describedby="privacy-consent-error" required>Oboznámila som sa s informáciami o spracúvaní osobných údajov. <a href="ochrana-osobnych-udajov.html">Ochrana osobných údajov</a></label>
+            <p id="privacy-consent-error" role="alert" hidden><strong>Pred potvrdením rezervácie musíte zaškrtnúť, že ste sa oboznámili s informáciami o spracúvaní osobných údajov.</strong></p>
           </div>
         </form>
       </section>
@@ -88,14 +184,31 @@
     <footer class="site-footer">
       <div class="footer-about"><a class="footer-brand" href="index.html">Elegance Nails</a><p>Krása sa skrýva v detailoch. Doprajte svojim nechtom starostlivosť, eleganciu a chvíľu oddychu.</p></div>
       <nav class="footer-navigation" aria-label="Navigácia v pätičke"><h2>Rýchle odkazy</h2><a href="index.html">Domov</a><a href="o-nas.html">O nás</a><a href="sluzby.html">Služby</a><a href="cennik.html">Cenník</a><a href="galeria.html">Galéria</a><a href="recenzie.html">Recenzie</a><a href="kontakt.html">Kontakt</a><a href="rezervacia.html">Rezervácia</a></nav>
-      <div class="footer-contact"><h2>Kontakt</h2><p>Telefón: <a href="tel:+421910123456">+421 910 123 456</a></p><p>E-mail: <a href="mailto:info@elegancenails.sk">info@elegancenails.sk</a></p><p>Adresa: Ružová 12, 033 01 Liptovský Hrádok</p><p class="footer-opening-hours-title"><strong>Otváracie hodiny:</strong></p><p>Pondelok – piatok: 9:00 – 18:00</p><p>Sobota: 9:00 – 13:00</p><p>Nedeľa: zatvorené</p></div>
+      <div class="footer-contact"><h2>Kontakt</h2><p>Telefón: <a href="tel:+421910123456">+421 910 123 456</a></p><p>E-mail: <a href="mailto:eleganceinfonails@gmail.com">eleganceinfonails@gmail.com</a></p><p>Adresa: Ružová 12, 033 01 Liptovský Hrádok</p><p class="footer-opening-hours-title"><strong>Otváracie hodiny:</strong></p><p>Pondelok – piatok: 9:00 – 18:00</p><p>Sobota: 9:00 – 13:00</p><p>Nedeľa: zatvorené</p></div>
       <div class="footer-social"><h2>Sledujte nás</h2><a href="https://www.instagram.com/elegance.nails.sk/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Elegance Nails"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.4" cy="6.6" r="1"></circle></svg><span>@elegance.nails.sk</span></a><a href="https://www.facebook.com/EleganceNails/" target="_blank" rel="noopener noreferrer" aria-label="Facebook Elegance Nails"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v5h4v-5h3l1-4h-4V9c0-.7.3-1 1-1Z"></path></svg><span>@Elegance Nails</span></a></div>
-      <div class="footer-copyright"><small>© 2026 Elegance Nails. Všetky práva vyhradené.</small><nav aria-label="Právne informácie"><a href="ochrana-osobnych-udajov.html">Ochrana osobných údajov</a><span aria-hidden="true">•</span><a href="mailto:info@elegancenails.sk?subject=Podmienky používania">Podmienky používania</a></nav></div>
+      <div class="footer-copyright"><small>© 2026 Elegance Nails. Všetky práva vyhradené.</small><nav aria-label="Právne informácie"><a href="ochrana-osobnych-udajov.html">Ochrana osobných údajov</a><span aria-hidden="true">•</span><a href="mailto:eleganceinfonails@gmail.com?subject=Podmienky používania">Podmienky používania</a></nav></div>
     </footer>
+    <dialog class="reservation-success-modal" id="reservation-success-modal" aria-labelledby="reservation-success-title" aria-describedby="reservation-success-description">
+      <div class="reservation-success-content">
+        <div class="reservation-success-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="m8 12 2.5 2.5L16 9"></path></svg>
+        </div>
+        <h2 id="reservation-success-title">Rezervácia úspešne odoslaná!</h2>
+        <p id="reservation-success-description">Ďakujeme za vašu rezerváciu v Elegance Nails. Potvrdenie s podrobnosťami vám čoskoro príde e-mailom. Tešíme sa na vašu návštevu.</p>
+        <button class="reservation-success-close" id="reservation-success-close" type="button">Rozumiem</button>
+      </div>
+    </dialog>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
       const serviceField = document.querySelector("#service");
       const dateField = document.querySelector("#date");
       const timeField = document.querySelector("#time");
+      const reservationForm = document.querySelector(".reservation-page form");
+      const submitButton = reservationForm.querySelector('button[type="submit"]');
+      const privacyConsentField = document.querySelector("#privacy-information-read");
+      const privacyConsentError = document.querySelector("#privacy-consent-error");
+      const successModal = document.querySelector("#reservation-success-modal");
+      const successModalCloseButton = document.querySelector("#reservation-success-close");
       const placeholder = document.querySelector("#reservation-placeholder");
       const summary = document.querySelector("#reservation-summary");
       const summaryService = document.querySelector("#summary-service");
@@ -135,6 +248,70 @@
       dateField.addEventListener("input", updateReservationSummary);
       timeField.addEventListener("change", updateReservationSummary);
       updateReservationSummary();
+
+      function showPrivacyConsentError() {
+        privacyConsentError.hidden = false;
+        privacyConsentField.setAttribute("aria-invalid", "true");
+      }
+
+      function clearPrivacyConsentError() {
+        privacyConsentError.hidden = true;
+        privacyConsentField.removeAttribute("aria-invalid");
+      }
+
+      privacyConsentField.addEventListener("invalid", showPrivacyConsentError);
+      privacyConsentField.addEventListener("change", () => {
+        if (privacyConsentField.checked) clearPrivacyConsentError();
+      });
+
+      successModalCloseButton.addEventListener("click", () => {
+        successModal.close();
+        submitButton.focus();
+      });
+
+      reservationForm.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        if (!privacyConsentField.checked) {
+          showPrivacyConsentError();
+          privacyConsentField.focus();
+          return;
+        }
+
+        if (!window.emailjs || typeof window.emailjs.send !== "function") {
+          window.alert("Nepodarilo sa načítať službu na odoslanie e-mailu. Skontrolujte internetové pripojenie a skúste to znova.");
+          return;
+        }
+
+        submitButton.disabled = true;
+        try {
+          const templateParams = {
+            name: reservationForm.elements.name.value,
+            email: reservationForm.elements.email.value,
+            service: serviceField.options[serviceField.selectedIndex].text,
+            date: formatDate(dateField.value),
+            time: timeField.value
+          };
+          const emailOptions = { publicKey: "MWrbDy-hXmqJsbwtR" };
+          const results = await Promise.allSettled([
+            window.emailjs.send("service_kqxopto", "template_9d1ap2v", templateParams, emailOptions),
+            window.emailjs.send("service_kqxopto", "template_uqhliaq", templateParams, emailOptions)
+          ]);
+          const failures = results.filter((result) => result.status === "rejected");
+
+          if (failures.length > 0) {
+            failures.forEach((failure) => console.error("EmailJS reservation email failed:", failure.reason));
+            throw new Error("One or more reservation emails could not be sent.");
+          }
+
+          successModal.showModal();
+        } catch (error) {
+          console.error("Reservation submission failed:", error);
+          window.alert("Rezerváciu sa nepodarilo odoslať. Skúste to znova neskôr alebo nás kontaktujte telefonicky.");
+        } finally {
+          submitButton.disabled = false;
+        }
+      });
     </script>
     <script src="scripts/navigation.js"></script>
   </body>
