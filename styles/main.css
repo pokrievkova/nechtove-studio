@@ -1417,10 +1417,10 @@ button {
 
   .reservation-page form {
     grid-template-columns: 1fr;
-    gap: 18px;
+    gap: 10px;
     width: 100%;
-    max-width: 100%;
-    padding: 12px;
+    max-width: 360px;
+    padding: 9px;
     box-sizing: border-box;
     overflow: hidden;
   }
@@ -1438,7 +1438,7 @@ button {
     max-width: 100%;
     min-width: 0;
     box-sizing: border-box;
-    gap: 8px;
+    gap: 6px;
   }
 
   .reservation-date-column .form-field {
@@ -1468,49 +1468,50 @@ button {
     display: block;
     width: 100%;
     max-width: 100%;
-    height: 38px;
-    min-height: 38px;
-    padding: 6px 9px;
-    font-size: 13px;
+    height: 34px;
+    min-height: 34px;
+    padding: 4px 8px;
+    font-size: 12px;
   }
 
   .reservation-page input[type="date"] {
     display: block;
+    align-self: start;
     width: 100%;
     max-width: 100%;
     min-width: 0;
     height: 38px !important;
     max-height: 38px;
     min-height: 0;
-    line-height: 38px;
+    line-height: normal;
     box-sizing: border-box;
-    padding: 4px 8px;
-    font-size: 13px;
+    padding: 6px 8px;
+    font-size: 12px;
   }
 
   .reservation-page .form-field {
-    gap: 3px;
+    gap: 2px;
   }
 
   .reservation-page .form-field label {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .reservation-page .reminder-option {
-    min-height: 38px;
-    gap: 7px;
-    padding: 7px 9px;
-    font-size: 12px;
+    min-height: 34px;
+    gap: 6px;
+    padding: 5px 8px;
+    font-size: 11px;
   }
 
   .reservation-page aside {
-    padding: 8px 10px;
+    padding: 6px 8px;
   }
 
   .reservation-page button[type="submit"] {
     display: block;
-    min-height: 40px;
-    padding: 7px 12px;
+    min-height: 36px;
+    padding: 6px 10px;
   }
 
   .reservation-page .privacy-notice {
@@ -1600,8 +1601,8 @@ button {
     height: 38px !important;
     max-height: 38px;
     min-height: 0 !important;
-    line-height: 38px;
-    padding: 4px 8px;
+    line-height: normal;
+    padding: 6px 8px;
   }
 }
 
@@ -1637,9 +1638,9 @@ button {
 
   .reservation-page form {
     width: 100%;
-    max-width: 100%;
-    gap: 10px;
-    padding: 10px;
+    max-width: 320px;
+    gap: 8px;
+    padding: 8px;
   }
 
   .reservation-date-column,
