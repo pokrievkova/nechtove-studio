@@ -1474,6 +1474,20 @@ button {
     font-size: 13px;
   }
 
+  .reservation-page input[type="date"] {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    height: 38px !important;
+    max-height: 38px;
+    min-height: 0;
+    line-height: 38px;
+    box-sizing: border-box;
+    padding: 4px 8px;
+    font-size: 13px;
+  }
+
   .reservation-page .form-field {
     gap: 3px;
   }
@@ -1580,6 +1594,14 @@ button {
 
   .reservation-summary-list div {
     grid-template-columns: 54px minmax(0, 1fr);
+  }
+
+  .reservation-page input[type="date"] {
+    height: 38px !important;
+    max-height: 38px;
+    min-height: 0 !important;
+    line-height: 38px;
+    padding: 4px 8px;
   }
 }
 
