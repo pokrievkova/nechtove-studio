@@ -72,7 +72,7 @@ button {
   position: sticky;
   z-index: 20;
   top: 0;
-  background: rgb(255 255 255 / 97%);
+  background: rgb(247 238 242);
   border-bottom: 2px solid var(--color-border);
 }
 
