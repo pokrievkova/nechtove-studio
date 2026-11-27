@@ -1260,6 +1260,10 @@ button {
     padding: 8px 0;
   }
 
+  .reservation-date-column {
+    grid-template-columns: 1fr;
+  }
+
   .brand {
     flex: 1 0 100%;
   }
