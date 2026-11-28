@@ -511,7 +511,6 @@ button {
   color: #777584;
   font-size: 13px;
 }
-
 .services-page > .text-link {
   margin-top: 20px;
 }
@@ -1380,6 +1379,18 @@ button {
   .review-grid article,
   .contact-grid article {
     padding: 13px;
+  }
+
+  .contact-grid article,
+  .contact-grid p,
+  .contact-grid p a {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .contact-grid p,
+  .contact-grid p a {
+    overflow-wrap: anywhere;
   }
 
   .service-image {
