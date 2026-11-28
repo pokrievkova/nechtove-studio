@@ -1583,6 +1583,12 @@ button {
     grid-column: 1;
   }
 
+  .reservation-date-column .form-field:nth-child(2),
+  .reservation-date-column .form-field:nth-child(3) {
+    width: 85%;
+    max-width: 220px;
+  }
+
   .reservation-page form {
     gap: 12px;
   }
@@ -1598,11 +1604,23 @@ button {
   }
 
   .reservation-page input[type="date"] {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     height: 38px;
-    max-height: 38px;
     min-height: 38px;
-    line-height: normal;
+    max-height: 38px;
+    box-sizing: border-box;
     padding: 5px 8px;
+    font-size: 13px;
+    line-height: normal;
+  }
+
+  .reservation-page input[type="date"]::-webkit-date-and-time-value {
+    height: 26px;
+    min-height: 0;
+    line-height: 26px;
   }
 }
 
